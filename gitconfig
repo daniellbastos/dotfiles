@@ -1,0 +1,8 @@
+[core]
+	excludesfile = /home/daniel/.gitignore_global
+	editor = vim
+[user]
+	name = Daniel Bastos
+	email = danielfloresbastos@gmail.com
+[color]
+	ui = true

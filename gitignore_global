@@ -1,0 +1,12 @@
+*.pyc
+__pycache__
+*.sqlite3
+settings_local.py
+
+node_modules
+media
+
+# Unit test / coverage reports
+*.coverage
+*.tox
+nosetests.xml
