@@ -27,6 +27,7 @@ call vundle#begin()
     Plugin 'tpope/vim-fugitive'
     Plugin 'terryma/vim-multiple-cursors'
     Plugin 'mattn/emmet-vim'
+    Plugin 'ctrlpvim/ctrlp.vim'
 
     "" Color
     Plugin 'altercation/vim-colors-solarized'
@@ -186,3 +187,21 @@ let g:jedi#completions_command = "<C-Space>"
 
 "" Multiple Cursor
 let g:multi_cursor_next_key='<C-d>'
+
+"" Custom git
+let g:gitgutter_max_signs = 1000
+
+"" ctrlp.vim
+set wildmode=list:longest,list:full
+set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|tox|ico|git|hg|svn))$'
+let g:ctrlp_user_command = "find %s -type f | grep -Ev '"+ g:ctrlp_custom_ignore +"'"
+let g:ctrlp_use_caching = 1
+cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
+noremap <leader>b :CtrlPBuffer<CR>
+let g:ctrlp_map = '<leader>e'
+let g:ctrlp_open_new_file = 'r'
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+if executable('ag')
+    let g:ctrlp_user_command = 'ag %s -l --nocolor --ignore '+ g:ctrlp_custom_ignore +' -g ""'
+endif
