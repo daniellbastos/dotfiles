@@ -9,7 +9,7 @@ Git
 ### gitconfig
 
    ```sh
-   ln -s ~/.dotfiles/gitignore ~/.gitignore
+   ln -s ~/.dotfiles/giticonfig ~/.giticonfig
    ```
 
 ### gitignore
