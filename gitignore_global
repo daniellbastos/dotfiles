@@ -5,6 +5,7 @@ settings_local.py
 .DS_Store
 
 node_modules
+bower_components
 media
 
 # Unit test / coverage reports

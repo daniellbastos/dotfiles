@@ -1,0 +1,7 @@
+# General alias
+alias rmpyc='find . -name "*.pyc" -delete'
+
+# Git alias
+alias gst='git status'
+alias ga='git add'
+alias gdiff='git diff'

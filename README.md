@@ -35,5 +35,19 @@ Vim
 
     ln -s ~/.dotfiles/vimrc ~/.vimrc
 
+    mkdir -p ~/.vim/spell
+
+    cp ~/.dotfiles/pt.utf-8.spl ~/.vim/spell
+
     vim +PluginInstall +qall
    ```
+
+
+### Spell Checker
+
+Commands | Descriptions
+--- | ---
+`]s` | Go to the next word
+`zg` | Add word
+`zw` | Remove word
+`z=` | Suggestions
