@@ -45,6 +45,8 @@ Vim
 
 ### Spell Checker
 
+Enable/disable the spell checker ``F5``
+
 Commands | Descriptions
 --- | ---
 `]s` | Go to the next word

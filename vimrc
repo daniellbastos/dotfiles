@@ -206,4 +206,17 @@ if executable('ag')
     let g:ctrlp_user_command = 'ag %s -l --nocolor --ignore '+ g:ctrlp_custom_ignore +' -g ""'
 endif
 
-set spell spelllang=pt
+set nospell
+let s:spellchecker = 0
+"" Spell Checker
+function ToggleSpellChecker()
+    if s:spellchecker
+        set nospell
+        let s:spellchecker = 0
+    else
+        set spell spelllang=pt
+        let s:spellchecker = 1
+    endif
+endf
+
+map <F5> :call ToggleSpellChecker()<CR>
