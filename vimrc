@@ -28,6 +28,7 @@ call vundle#begin()
     Plugin 'terryma/vim-multiple-cursors'
     Plugin 'mattn/emmet-vim'
     Plugin 'ctrlpvim/ctrlp.vim'
+    Plugin 'SirVer/ultisnips'
 
     "" Color
     Plugin 'altercation/vim-colors-solarized'
@@ -220,3 +221,8 @@ function ToggleSpellChecker()
 endf
 
 map <F5> :call ToggleSpellChecker()<CR>
+
+"" Ultisnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
