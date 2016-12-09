@@ -11,4 +11,5 @@ media
 # Unit test / coverage reports
 *.coverage
 *.tox
+.env
 nosetests.xml

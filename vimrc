@@ -67,7 +67,7 @@ set nowritebackup              " disable backup before overwriting a file
 set noswapfile                 " disable swap file
 set cul                        " highlight the screen line of the cursor
 set linespace=4                " add some line space for easy reading
-set colorcolumn=80             " Useful to align text
+set colorcolumn=110            " Useful to align text
 set expandtab                  " use spaces, not tabs
 set list                       " show invisible characters
 set tabstop=4                  " a tab is two spaces
