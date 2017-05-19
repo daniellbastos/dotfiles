@@ -3,6 +3,11 @@ Dotfiles
 
 This repo has the configurations general my machine.
 
+  ```sh
+  git clone git@github.com:daniellbastos/dotfiles.git ~/.dotfiles
+  make start
+  ```
+
 Git
 ---
 
@@ -17,7 +22,6 @@ Git
    ```sh
    ln -s ~/.dotfiles/gitignore_global ~/.gitignore_global
    ```
-
 
 Vim
 ---
@@ -41,6 +45,14 @@ Vim
 
     vim +PluginInstall +qall
    ```
+
+Bash
+----
+
+  ```sh
+  git clone git@github.com:magicmonty/bash-git-prompt.git ~/.bash-git-prompt
+  ```
+
 
 
 ### Spell Checker
