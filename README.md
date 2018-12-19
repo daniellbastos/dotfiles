@@ -14,7 +14,7 @@ Git
 ### gitconfig
 
    ```sh
-   ln -s ~/.dotfiles/giticonfig ~/.giticonfig
+   ln -s ~/.dotfiles/gitconfig ~/.gitconfig
    ```
 
 ### gitignore
