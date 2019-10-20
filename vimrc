@@ -29,11 +29,15 @@ call vundle#begin()
     Plugin 'mattn/emmet-vim'
     Plugin 'ctrlpvim/ctrlp.vim'
     Plugin 'SirVer/ultisnips'
+    Plugin 'vim-airline/vim-airline'
+    Plugin 'vim-airline/vim-airline-themes'
 
     "" Color
     Plugin 'altercation/vim-colors-solarized'
     Plugin 'sickill/vim-monokai'
+    Plugin 'dracula/vim'
     Plugin 'godlygeek/csapprox'
+    Plugin 'sonph/onehalf', {'rtp': 'vim/'}
 
     "" Python Stack
     Plugin 'davidhalter/jedi-vim'
@@ -74,6 +78,7 @@ set tabstop=4                  " a tab is two spaces
 set softtabstop=4
 set shiftwidth=4
 set shiftround
+set copyindent
 set backspace=indent,eol,start " backspace through everything in insert mode
 
 """ Searching
@@ -90,6 +95,7 @@ set t_Co=256
 set title
 set titleold="Terminal"
 set titlestring=%F
+set cursorline
 
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,.pyc,__pycache__,*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite3,*/node_modules/*
@@ -98,12 +104,20 @@ set wildignore+=*.o,*.obj,.git,*.rbc,.pyc,__pycache__,*/tmp/*,*.so,*.swp,*.zip,*
 autocmd! bufwritepost .vimrc source %
 
 
+"load ftplugins and indent files
+filetype plugin on
+filetype indent on
+
 " -----------------------------------------------------------------------------
 " Colorscheme settings
 " -----------------------------------------------------------------------------
 
 " colorscheme cake16
-colorscheme monokai
+colorscheme dracula
+" colorscheme onehalfdark
+" let g:airline_theme='onehalfdark'
+let g:airline_theme='dracula'
+let g:airline#extensions#tabline#formatter = 'default'
 
 " -----------------------------------------------------------------------------
 " Abbreviations
@@ -166,6 +180,9 @@ noremap <c-h> <c-w>h
 " Plugins settings
 " -----------------------------------------------------------------------------
 
+"" Basic
+let g:airline#extensions#tabline#enabled = 1
+
 "" Syntastic
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
@@ -226,3 +243,10 @@ map <F5> :call ToggleSpellChecker()<CR>
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" Custom tabstop for frontend files
+autocmd FileType ruby,javascript,css,html,jade,coffee,htmldjango
+       \ set expandtab | set softtabstop=2 | set shiftwidth=2
+" autocmd FileType html setlocal ts=2 sts=2 sw=2
+" autocmd FileType javascript setlocal ts=4 sts=4 sw=4
+" autocmd BufRead,BufNewFile *.htm,*.html, *.js, *.css, *.scss, *.vue setlocal tabstop=2 shiftwidth=2 softtabstop=2
